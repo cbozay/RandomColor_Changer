@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        transition: 0.5s ease-in-out;
+      }
+      #bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+
+    <div id="bg">
+      <button id="btn">Change Background</button>
+    </div>
+
+    <script>
+      const button = document.querySelector("button");
+      const body = document.querySelector("body");
+      const colors = [
+        "green",
+        "#5c3fa1",
+        "#b366c4",
+        "#66c4b4",
+        "#d9c689",
+        "#89d2d9",
+        "#fc0303",
+      ];
+
+      button.addEventListener("click", changeBackground);
+      function changeBackground() {
+        const randomColor = Math.floor(Math.random() * colors.length);
+        const chosedColor = colors[randomColor];
+        body.style.backgroundColor = chosedColor;
+      }
+    </script>
+  </body>
+</html>
